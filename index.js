@@ -4,6 +4,8 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 const generatePasswordsBtn = document.getElementById("generate-passwords-btn")
 const firstPasswordEl = document.getElementById("first-password-el")
 const secondPasswordEl = document.getElementById("second-password-el")
+const passwordsEls = document.querySelectorAll(".password")
+const copyPasswordsTipEl = document.getElementById("copy-passwords-tip")
 
 generatePasswordsBtn.addEventListener('click', (event) => {
     firstPasswordEl.textContent = generatePassword()
@@ -22,3 +24,20 @@ function generatePassword() {
 function getRandomNumberBetween(minIndexInclusive, maxIndexInclusive) {
     return Math.floor(Math.random() * (maxIndexInclusive - minIndexInclusive + 1)) + minIndexInclusive
 }
+
+// Stretch Goal: Copy to Clipboard functionality
+passwordsEls.forEach(password => {
+    password.addEventListener('click', (event) => {
+        const passwordText = event.target.textContent
+        navigator.clipboard.writeText(passwordText)
+        const copyPasswordsTipText = copyPasswordsTipEl.textContent
+        const background = event.target.style.background
+        event.target.style.background = "blue"
+        copyPasswordsTipEl.textContent =  "Copied: " + passwordText
+        setTimeout(() => {
+            event.target.style.background = background
+            copyPasswordsTipEl.textContent = copyPasswordsTipText
+        }
+        , 2000)
+    })
+})
