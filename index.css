@@ -48,6 +48,11 @@ header {
     border-radius: 6px;
 }
 
+#generate-passwords-btn:hover {
+    background: #218449 !important;
+    cursor: pointer;
+}
+
 #generate-passwords-section {
     padding-bottom: 35px;
     border-bottom: 1px solid #2F3E53;
@@ -55,10 +60,12 @@ header {
 
 #copy-passwords-tip {
     height: 39px;
-    padding-top: 8px;
+    padding-top: 11px;
     box-sizing: border-box;
     background: black;
     border-radius: 6px;
+    font-size: 14px;
+    text-align: center;
 }
 
 #passwords {
@@ -80,4 +87,6 @@ header {
 
 .password:hover {
     background: white;
+    color: #218449;
+    cursor: pointer;
 }
