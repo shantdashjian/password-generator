@@ -46,6 +46,7 @@ header {
     padding: 9px 17px;
     border: none;
     border-radius: 6px;
+    font-weight: bold;
 }
 
 #generate-passwords-btn:hover {
@@ -83,6 +84,7 @@ header {
     text-align: center;
     padding-top: 10px;
     border-radius: 6px;
+    font-weight: bold;
 }
 
 .password:hover {
